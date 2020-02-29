@@ -52,7 +52,7 @@ def compute_prediction(img, model):
 
 def infer_images(image_dir, model_path, output_dir):
 
-    filelist = glob(os.path.join(image_dir,'*.jpg'))
+    filelist = glob(os.path.join(image_dir,'*.bmp'))
 
     print ('[INFO] Running inference on %s test images' %len(filelist))
 
