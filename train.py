@@ -179,7 +179,7 @@ def train_model(X, y, classifier):
     if classifier == "SVM":
         from sklearn.svm import SVC
         print ('[INFO] Training Support Vector Machine model.')
-        model = SVC()
+        model = SVC(probability = True)
         model.fit(X, y)
     elif classifier == "RF":
         from sklearn.ensemble import RandomForestClassifier
