@@ -12,6 +12,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 import time
 import mahotas as mt
+from pdb import set_trace
 
 def check_args(args):
 
@@ -39,17 +40,17 @@ def parse_args():
     return check_args(args)
 
 def read_data(image_dir, label_dir):
-
+    set_trace()
     print ('[INFO] Reading image data.')
 
-    filelist = glob(os.path.join(image_dir, '*.jpg'))
+    filelist = glob(os.path.join(image_dir, '*.bmp'))
     image_list = []
     label_list = []
 
     for file in filelist:
 
         image_list.append(cv2.imread(file, 1))
-        label_list.append(cv2.imread(os.path.join(label_dir, os.path.basename(file).split('.')[0]+'.png'), 0))
+        label_list.append(cv2.imread(os.path.join(label_dir, os.path.basename(file).split('.')[0]+'.gif'), 0))
 
     return image_list, label_list
 
